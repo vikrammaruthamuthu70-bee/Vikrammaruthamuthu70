@@ -1,0 +1,17 @@
+name: vikrammaruthamuthu70
+version: 0.1.0
+
+authors:
+  - Vikram Maruthamuthu <vikrammaruthamuthu70@example.com>
+
+targets:
+  vikrammaruthamuthu70:
+    main: src/main.cr
+
+crystal: ">= 1.0.0"
+
+dependencies:
+  # Add your dependencies here
+
+development_dependencies:
+  # Add development dependencies here
