@@ -1,0 +1,196 @@
+:root {
+  --bg: #f4f7fd;
+  --surface: #ffffff;
+  --primary: #2f6bef;
+  --primary-soft: #e6edff;
+  --text: #222831;
+  --muted: #5f6d7a;
+  --success: #2ecc71;
+  --danger: #ff5f5f;
+  --border: rgba(34, 40, 49, 0.1);
+}
+
+.APA{
+  background-color: #8760cf;
+  border-radius: 12px;
+  color:#e6edff;
+  padding: 8px 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: radial-gradient(circle at top left, #eef3ff, transparent 35%),
+    radial-gradient(circle at bottom right, #f7f2ff, transparent 30%),
+    var(--bg);
+  color: var(--text);
+}
+
+.app-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header {
+  margin-bottom: 24px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 2.6vw, 3rem);
+}
+
+header p {
+  color: var(--muted);
+  margin: 12px 0 0;
+}
+
+.controls-panel,
+.results-panel,
+.semester-panel,
+.performance-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 22px;
+}
+
+.controls-panel {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  align-items: end;
+}
+
+.control-item {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  font-weight: 600;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  font: inherit;
+}
+
+button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button.primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+button.danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  padding: 14px 12px;
+  background: #f5f7ff;
+  font-weight: 700;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+
+tbody td {
+  padding: 12px;
+}
+
+tbody input {
+  width: 100%;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 64px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.badge-success {
+  background: #2ecc71;
+}
+
+.badge-danger {
+  background: #ff5f5f;
+}
+
+.result-card,
+.charts-card {
+  background: #f8fbff;
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.result-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.charts-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.performance-list {
+  display: grid;
+  gap: 12px;
+}
+
+.performance-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px 16px;
+  background: #fff;
+}
+
+.performance-card strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 820px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}

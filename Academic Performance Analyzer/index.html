@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Performance Analyzer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <div class="APA">
+      <h1>Academic Performance Analyzer</h1>
+      </div>
+      <p>UG Arts & Science (3 years / 6 semesters), UG Engineering (4 years / 8 semesters), PG (2 years / 4 semesters)</p>
+    </header>
+
+    <section class="controls-panel">
+      <div class="control-item">
+        <label for="programSelect">Select Program</label>
+        <select id="programSelect">
+          <option value="ugArts">UG Arts & Science</option>
+          <option value="ugEng">UG Engineering</option>
+          <option value="pg">PG</option>
+        </select>
+      </div>
+      <div class="control-item">
+        <label for="semesterSelect">Select Semester</label>
+        <select id="semesterSelect"></select>
+      </div>
+      <button id="addSubjectBtn" class="primary">Add Subject</button>
+      <button id="calculateBtn" class="primary">Calculate CGPA</button>
+      <button id="resetBtn" class="danger">Reset Semester</button>
+    </section>
+
+    <section class="semester-panel">
+      <h2>Semester Subjects</h2>
+      <div class="table-container">
+        <table id="subjectTable">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Marks (%)</th>
+              <th>Credits</th>
+              <th>Grade</th>
+              <th>Grade Point</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="results-panel">
+      <div class="result-card">
+        <h3>Calculated Results</h3>
+        <div class="result-grid">
+          <div><strong>Selected Semester:</strong> <span id="selectedSemester">1</span></div>
+          <div><strong>Semester SGPA:</strong> <span id="semesterSGPA">0.00</span></div>
+          <div><strong>Total Credits:</strong> <span id="totalCredits">0</span></div>
+          <div><strong>Total Subjects:</strong> <span id="totalSubjects">0</span></div>
+          <div><strong>Total CGPA:</strong> <span id="cgpaValue">0.00</span></div>
+          <div><strong>Overall Percentage:</strong> <span id="overallPercentage">0%</span></div>
+          <div><strong>Passed Subjects:</strong> <span id="passedCount">0</span></div>
+          <div><strong>Failed Subjects:</strong> <span id="failedCount">0</span></div>
+        </div>
+      </div>
+
+      <div class="charts-card">
+        <h3>Charts</h3>
+        <div class="charts-grid">
+          <div>
+            <canvas id="sgpaChart" height="220"></canvas>
+          </div>
+          <div>
+            <canvas id="gradeChart" height="220"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="performance-panel">
+      <h2>Student Subject Performance</h2>
+      <div id="performanceList" class="performance-list"></div>
+    </section>
+  </div>
+</body>
+</html>
